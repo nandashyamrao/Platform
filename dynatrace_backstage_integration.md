@@ -1,30 +1,49 @@
-# **Integrating Dynatrace with Backstage in MERNA**  
+# **Integrating Dynatrace Launcher Apps with Backstage**
 
-## **1️⃣ Overview**  
-This document outlines how Dynatrace can be integrated into Backstage within MERNA, covering:  
-- **Unified observability in Backstage**  
-- **Live service health dashboards**  
-- **GitLab CI/CD traceability**  
-- **Self-service monitoring & alerts**  
-- **Incident visibility & auto-remediation**  
+## **🔹 Overview**
+Dynatrace **Launcher Apps** provide a **centralized interface within Dynatrace** for observability, monitoring, and troubleshooting. Backstage, on the other hand, is **a developer portal for self-service access to CI/CD, documentation, APIs, and observability tools**.
 
----  
+### **Why Integrate Them?**
+✅ **Developers want a single view of services, deployments, logs, and CI/CD status.**  
+✅ **Dynatrace provides deep observability, while Backstage serves as a self-service developer hub.**  
+✅ **Integration eliminates tool-switching and provides end-to-end visibility.**  
 
-## **2️⃣ Benefits of Dynatrace Integration with Backstage**  
+---
 
-### **✅ 1. Unified Observability in Developer Workflows**  
-- Developers can **see real-time application health, logs, traces, and metrics** in one place.  
-- No need to switch between **Dynatrace dashboards and Backstage**—observability data is embedded directly.  
-- **Example:** A team deploying a service can see Dynatrace alerts & metrics **without leaving Backstage**.  
+## **🔹 Dynatrace Launcher Apps vs. Backstage – A Comparison**
+| Feature | Dynatrace Launcher Apps | Backstage |
+|---------|-------------------------|-----------|
+| **Centralized UI** | ✅ Yes, within Dynatrace | ✅ Yes, across multiple developer tools |
+| **Customizable Dashboards** | ✅ Yes, within Dynatrace Apps | ✅ Yes, with Backstage plugins |
+| **Self-Service Access** | ✅ Yes, for monitoring & observability | ✅ Yes, for CI/CD, service catalogs, and logs |
+| **Extensible Plugins** | ✅ Yes, via Dynatrace AppEngine | ✅ Yes, via Backstage plugins |
+| **Observability & Monitoring** | ✅ Built-in with Dynatrace | 🔌 Integrates with Dynatrace, Prometheus, etc. |
 
----  
+✅ **Both aim to streamline workflows but serve different purposes.**  
+✅ **Dynatrace = Observability & AI-driven insights.**  
+✅ **Backstage = Developer Self-Service for CI/CD, APIs, and documentation.**  
 
-### **✅ 2. Live Service Health Dashboards in Backstage**  
-- Display **real-time application performance and error rates** from Dynatrace.  
-- Embed **Dynatrace service status, SLO tracking, and key metrics** inside Backstage.  
-- **Example:** A Backstage service catalog page can show **latency, error rate, and transaction volumes** for a microservice.  
+---
 
-📌 **Example Backstage YAML for Dynatrace Integration:**  
+## **🔹 How to Integrate Dynatrace into Backstage**
+
+### **1️⃣ Install the Dynatrace Plugin for Backstage**
+The **Dynatrace Backstage Plugin** allows teams to **display dashboards, logs, traces, and AI-powered insights** inside Backstage.
+
+📌 **Install the Dynatrace Plugin in Backstage:**
+```sh
+yarn add @dynatrace/plugin-backstage
+```
+
+📌 **Configure `app-config.yaml` to connect Backstage to Dynatrace:**
+```yaml
+integrations:
+  dynatrace:
+    - host: your-dynatrace-environment-url
+      apiToken: ${DYNATRACE_API_TOKEN}
+```
+
+📌 **Example Backstage YAML to Link a Service to Dynatrace:**
 ```yaml
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -32,103 +51,114 @@ metadata:
   name: my-app
 spec:
   type: service
-  owner: team-xyz
+  owner: team-dev
   lifecycle: production
   links:
-    - url: "https://dynatrace.company.com/dashboard/my-app"
-      title: "Dynatrace Service Dashboard"
+    - url: "https://your-dynatrace-env.live.dynatrace.com/ui/apps/services/my-app"
+      title: "Dynatrace Service Insights"
       icon: "monitor"
 ```
-✅ **Clicking the link takes developers to the exact service dashboard in Dynatrace.**  
 
----  
+✅ **Developers can now see Dynatrace observability data inside Backstage.**  
 
-### **✅ 3. GitLab CI/CD Traceability**  
-- Link **GitLab pipelines to Dynatrace traces** to see the impact of deployments.  
-- Developers can **trace a bad deployment to performance issues** instantly.  
-- **Example:** A Backstage CI/CD page can show **which Git commit caused a Dynatrace alert**.  
+---
 
-📌 **Example Backstage Plugin Configuration for GitLab & Dynatrace:**  
+### **2️⃣ Embed Dynatrace Launcher Apps in Backstage**
+Dynatrace **Launcher Apps** like Logs, Tracing, and AI-powered Incident Detection can be embedded into Backstage.
+
+📌 **Example Backstage YAML to Embed Dynatrace Apps:**  
 ```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
 metadata:
   name: my-app
 spec:
   type: service
-  owner: team-xyz
+  owner: team-dev
   lifecycle: production
   links:
-    - url: "https://gitlab.com/my-org/my-app/pipelines"
-      title: "GitLab Pipeline"
-      icon: "gitlab"
-    - url: "https://dynatrace.company.com/traces/my-app"
-      title: "Dynatrace Traces"
+    - url: "https://your-dynatrace-env.live.dynatrace.com/ui/apps/logs/my-app"
+      title: "Dynatrace Logs"
+      icon: "logs"
+    - url: "https://your-dynatrace-env.live.dynatrace.com/ui/apps/tracing/my-app"
+      title: "Dynatrace Tracing"
       icon: "trace"
+    - url: "https://your-dynatrace-env.live.dynatrace.com/ui/apps/problems"
+      title: "Dynatrace AI Problems"
+      icon: "alert"
 ```
-✅ **Developers can quickly correlate code changes with application performance.**  
 
----  
+✅ **Developers can now access logs, traces, and AI insights directly from Backstage.**  
 
-### **✅ 4. Self-Service Monitoring & Alerts**  
-- Developers can **define Dynatrace alerts directly from Backstage** without needing admin access.  
-- Teams can **self-service their own dashboards, alerts, and SLOs** in Dynatrace.  
-- **Example:** A Backstage UI form can let developers configure **Dynatrace monitoring rules** for their service.  
+---
 
-📌 **Example Backstage Alert Definition:**  
+### **3️⃣ Display Dynatrace CI/CD Insights in Backstage**
+Dynatrace **tracks deployments and CI/CD events** from GitLab, Jenkins, or GitHub Actions. These can be surfaced in Backstage.
+
+📌 **Modify `.gitlab-ci.yml` to Send Deployment Info to Dynatrace:**
+```yaml
+deploy:
+  stage: deploy
+  script:
+    - curl -X POST "https://your-dynatrace-env/api/v2/events/ingest"       -H "Authorization: Api-Token $DYNATRACE_API_TOKEN"       -H "Content-Type: application/json"       -d '{
+            "eventType": "CUSTOM_DEPLOYMENT",
+            "title": "Deployment: $CI_COMMIT_REF_NAME",
+            "properties": {
+              "gitlab_project": "$CI_PROJECT_NAME",
+              "gitlab_branch": "$CI_COMMIT_REF_NAME",
+              "gitlab_pipeline_id": "$CI_PIPELINE_ID"
+            }
+          }'
+```
+
+📌 **Backstage YAML to Show Deployment Status:**  
 ```yaml
 apiVersion: backstage.io/v1alpha1
-kind: Alert
+kind: Component
 metadata:
-  name: high-latency-warning
+  name: my-app
 spec:
-  type: performance
-  description: "Alert if service latency > 500ms"
-  conditions:
-    - metric: "response.time"
-      threshold: 500
-      operator: "greater_than"
-  actions:
-    - notify: "team-xyz@company.com"
-    - trigger: "rollback_pipeline"
+  type: service
+  owner: team-dev
+  lifecycle: production
+  links:
+    - url: "https://dynatrace.company.com/deployments/my-app"
+      title: "Dynatrace Deployment Events"
+      icon: "monitor"
 ```
-✅ **Developers can manage observability **without needing direct Dynatrace admin access**.  
 
----  
+✅ **Backstage now shows deployment status alongside GitLab pipelines.**  
 
-### **✅ 5. Incident & Auto-Remediation Visibility**  
-- Backstage can show **Dynatrace Davis AI incidents** so teams can take action faster.  
-- Incidents can trigger **automated rollbacks, scaling, or Kubernetes healing.**  
-- **Example:** A Backstage "Incidents" page can show active **Dynatrace Davis AI problems** with links to resolutions.  
+---
 
-📌 **Example Backstage Incident Panel:**  
-```yaml
-apiVersion: backstage.io/v1alpha1
-kind: Problem
-metadata:
-  name: high-cpu-usage
-spec:
-  type: performance
-  description: "CPU utilization above 90% for 5 minutes"
-  actions:
-    - notify: "on-call-sre@company.com"
-    - trigger: "scale-up-kubernetes"
-```
-✅ **Dynatrace AI-powered problem detection can be surfaced directly inside Backstage.**  
+## **🔹 Benefits of Integration**
 
----  
+| **Feature** | **What It Does** | **Developer Benefit** |
+|------------|----------------|----------------|
+| 🚀 **CI/CD Insights** | Tracks GitLab/Jenkins deployments in Dynatrace | Developers can **see performance impact of deployments** |
+| 🔍 **Logs & Traces** | Access logs & traces inside Backstage | No need to switch tools to debug |
+| 🤖 **Davis AI Incident Detection** | Shows AI-detected problems inside Backstage | Faster mean-time-to-repair (MTTR) |
+| 📊 **Custom Dashboards** | Embed Dynatrace dashboards in Backstage | Self-service observability |
+| 🛠️ **Self-Service Monitoring** | No need for SRE involvement | Developers gain independence |
 
-## **3️⃣ Summary: Why Dynatrace + Backstage in MERNA?**  
+✅ **Dynatrace brings deep observability, while Backstage acts as a unified interface for developers.**  
 
-| **Benefit** | **How It Helps** |
-|------------|---------------|
-| **Unified Observability** | View logs, traces, and metrics **inside Backstage** |
-| **Live Service Health** | Show Dynatrace **service dashboards and alerts** in Backstage |
-| **CI/CD Traceability** | Link GitLab deployments with **Dynatrace performance issues** |
-| **Self-Service Monitoring** | Developers can **create & manage their own Dynatrace alerts** |
-| **AI-Driven Incident Management** | Backstage shows **Dynatrace problems & auto-remediation actions** |
+---
 
-✅ **Integrating Dynatrace into Backstage makes MERNA’s observability truly developer-friendly!** 🚀  
+## **🔹 Summary**
+🚀 **Why Integrate Dynatrace & Backstage?**
+- **Developers get a single view for deployments, logs, traces, and incidents.**
+- **Eliminates tool-switching between Dynatrace & Backstage.**
+- **Provides full observability without needing SRE intervention.**
+- **AI-powered insights help prevent outages and speed up debugging.**
 
----  
+✅ **Best of both worlds: Dynatrace’s powerful observability + Backstage’s developer-first self-service approach.**  
 
-## **4️⃣ Next Steps**  
-🚀 **Would you like a step-by-step guide for setting up Backstage with Dynatrace APIs and plugins?** 🚀  
+---
+
+## **🔹 Next Steps**
+Would you like:
+1. 📜 **A Terraform script to automate the Dynatrace & Backstage integration?**
+2. 🔧 **A guide on adding Dynatrace plugin components in Backstage UI?**
+3. 🚀 **More insights into Backstage service ownership using Dynatrace metadata?**
+
