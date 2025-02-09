@@ -185,14 +185,6 @@ spec:
 - **It integrates seamlessly with CI/CD, Kubernetes, and observability tools.**  
 - **It reduces cognitive load by simplifying service ownership and documentation.**  
 
-✅ **With Backstage, developers spend less time searching for information and more time writing code!**  
+✅ **With Backstage, developers spend less time searching for information and more time writing code.
 
----
 
-## **🔹 Next Steps**
-Would you like:
-1. 📜 **A guide on automating Backstage setup with Terraform?**  
-2. 🔧 **A tutorial on integrating Backstage with Dynatrace, GitLab, and Kubernetes?**  
-3. 🚀 **More insights into Backstage plugins for cost monitoring, security, and API management?**  
-
-🚀 **Let’s make your developer portal seamless!**  
