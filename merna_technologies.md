@@ -93,6 +93,6 @@ MERNA consists of **six primary technology areas**:
 ✅ **It follows DevOps, GitOps, and security-first principles** for scalability and compliance.  
 ✅ **Dynatrace, GitLab, OpenShift, and AWS services form the core of the ecosystem**.  
 
-🚀 **MERNA provides a robust, secure, and automated platform for modern application delivery!**  
 
-Would you like any additional details? Let me know! 🚀📜  
+
+
