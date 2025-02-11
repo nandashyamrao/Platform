@@ -1,6 +1,4 @@
 
-
-
 # 🚀 Automating Release Validation with Observability-Based Scorecarding
 
 Ensuring system stability after deployments is crucial, whether introducing a new release or modifying configurations. **Dynatrace Site Reliability Guardian** 🛡️ provides a structured approach to automating release validation, helping teams monitor critical objectives across infrastructure, services, security, and more. Below is an overview of its functionality and best practices.
@@ -9,6 +7,32 @@ Ensuring system stability after deployments is crucial, whether introducing a ne
 - ✅ Designed to automate release validation by evaluating key metrics post-deployment.
 - 🎯 Provides **predefined templates** to quickly establish monitoring for Kubernetes workloads, security gates, and other objectives.
 - 🔧 Allows customization by defining additional validation criteria specific to the organization’s needs.
+
+## 🔥 Current Challenges and Resolutions
+
+### 1. **❌ High Error Rates Post-Deployment**
+   - **Challenge**: Increased error logs after a deployment may indicate an issue with the new release.
+   - **Resolution**: Utilize the **Container Logs** metric in Guardian to detect abnormal error spikes and rollback if necessary.
+
+### 2. **🚨 Service Downtime and Unavailability**
+   - **Challenge**: Deployments may lead to service unavailability or increased HTTP 500 errors.
+   - **Resolution**: Leverage **Service Availability** monitoring to track failed requests and take proactive measures before user impact.
+
+### 3. **🐢 Slow Application Performance After Deployment**
+   - **Challenge**: Response times of critical API endpoints may degrade post-deployment.
+   - **Resolution**: **Service Performance** validation ensures API response times remain within acceptable thresholds.
+
+### 4. **🔄 Deployment Rollbacks and Failures**
+   - **Challenge**: Rolling updates may not maintain the same throughput as before.
+   - **Resolution**: **Service Throughput** checks validate if request volume is consistent post-deployment, preventing disruptions.
+
+### 5. **🤖 Lack of Automated Validation and Monitoring**
+   - **Challenge**: Manual checks and validations can delay releases and introduce errors.
+   - **Resolution**: **Synthetic Availability** automates testing to ensure consistent application behavior.
+
+### 6. **📊 Ineffective Observability Metrics Management**
+   - **Challenge**: Siloed monitoring tools make it difficult to correlate observability metrics across deployments.
+   - **Resolution**: **Centralized Guardian** approach consolidates validation across logs, metrics, and traces for unified visibility.
 
 ## 🏆 Best Practices for Release Validation
 - 📌 **Custom Objectives**: Move beyond default templates by adding custom validation checks.
@@ -61,6 +85,8 @@ Ensuring system stability after deployments is crucial, whether introducing a ne
 - 🔗 **Git Commit Integration**: Guardian results can be linked to Git workflows for visibility.
 - 🧐 **Root Cause Analysis**: Quickly identify failures, such as service unavailability or pod failures.
 
+
+
 ## ✅ Final Takeaways
 - 🚀 **Leverage Guardian Templates** for a quick start.
 - 🛠️ **Customize validation metrics** to fit your system’s requirements.
@@ -69,6 +95,3 @@ Ensuring system stability after deployments is crucial, whether introducing a ne
 - 🖥️ **Integrate with Backstage and Git** for improved developer workflow efficiency.
 
 This methodology ensures **continuous observability and reliability** throughout the deployment lifecycle. 🎯
-
-
-
