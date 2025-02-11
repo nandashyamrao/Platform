@@ -1,6 +1,6 @@
-# Save the markdown content to a file for download
 
-markdown_content = """\
+
+
 # 🚀 Automating Release Validation with Observability-Based Scorecarding
 
 Ensuring system stability after deployments is crucial, whether introducing a new release or modifying configurations. **Dynatrace Site Reliability Guardian** 🛡️ provides a structured approach to automating release validation, helping teams monitor critical objectives across infrastructure, services, security, and more. Below is an overview of its functionality and best practices.
