@@ -57,7 +57,7 @@ Key takeaways include:
 - **Documentation Management**: By simplifying documentation processes, Backstage ensures that knowledge is preserved and accessible, ultimately aiding in onboarding and collaboration.
 - **Enhanced Search Functionality**: The powerful search feature allows developers to navigate the platform seamlessly, increasing efficiency and reducing frustration.
 
-To explore more about Backstage and its potential benefits for organizations, developers can visit **backstage.io** for tutorials, examples, and deployment guidelines. For those seeking a robust, enterprise-ready version, **Red Hat Developer Hub** offers a hardened instance of Backstage equipped with specialized plugins. 
+**Red Hat Developer Hub** offers a hardened instance of Backstage equipped with specialized plugins. 
 
 In summary, as the tech landscape continues to evolve, prioritizing the developer experience through tools like Backstage is essential for fostering innovation, collaboration, and satisfaction within development teams.
 
