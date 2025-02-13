@@ -1,12 +1,8 @@
-### Metadata
-
-- Title:Mastering Automation with Dynatrace: Empowering DevOps & SRE excellence with cloud native automation
-
-- URL:https://www.youtube.com/watch?v=5W1XhRjCsBQ
 
 
+### Title:Mastering Automation with Dynatrace: Empowering DevOps & SRE excellence with cloud native automation
 
-### Notes
+
 
 # Chapter: Embracing Automation in DevOps: A Path to Excellence
 
