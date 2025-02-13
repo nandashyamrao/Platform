@@ -180,4 +180,4 @@ Each pipeline consists of:
 - **Supports logs, traces, metrics, and business events**.
 - **Future roadmap includes external integrations, fine-grained permissions, and advanced analytics**.
 
-🔗 **For more details, check the DT community forums and documentation**! 🚀
+
