@@ -1,4 +1,4 @@
-This is a **detailed transcript of a discussion on Open Pipeline**, a new ingestion layer for the **Dynatrace platform**. Below is a **thorough breakdown** of the discussion, covering **every aspect** mentioned.
+This is a **Detailed discussion on Dynatrace Open Pipeline**, a new ingestion layer for the **Dynatrace platform**. Below is a **thorough breakdown** of the discussion, covering **every aspect** mentioned.
 
 ---
 
