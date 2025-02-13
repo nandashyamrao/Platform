@@ -1,7 +1,7 @@
 # **Platform Engineering Workshop**
 
 ## **Overview**
-In this lab, we simulated a real-world scenario where a **new feature** in a microservice is controlled using a **feature flag**. The goal was to assess its **impact on system performance and reliability** before rolling it out to users. Dynatrace was used for **observability, automated analysis, and decision-making** based on real-time data.
+In the workshop, we simulated a real-world scenario where a **new feature** in a microservice is controlled using a **feature flag**. The goal was to assess its **impact on system performance and reliability** before rolling it out to users. Dynatrace was used for **observability, automated analysis, and decision-making** based on real-time data.
 
 By following a structured workflow, we were able to:
 - Enable the **feature flag** to introduce new functionality.
