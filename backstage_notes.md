@@ -1,14 +1,4 @@
-### Metadata
-
-- Title:Backstage.io - An Open Source Portal for Taming Developer Chaos
-
-- URL:https://www.youtube.com/watch?v=n1IrNe5MmZg
-
-
-
-### Notes
-
-- ([00:00](https://www.youtube.com/watch?v=n1IrNe5MmZg&t=0s)) # Chapter: Enhancing Developer Experience Through Backstage
+ # Chapter: Enhancing Developer Experience Through Backstage
 
 ## Introduction
 
