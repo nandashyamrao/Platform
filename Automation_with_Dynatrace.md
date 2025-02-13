@@ -8,7 +8,7 @@
 
 ### Notes
 
-- ([00:00](https://www.youtube.com/watch?v=5W1XhRjCsBQ&t=0s)) # Chapter: Embracing Automation in DevOps: A Path to Excellence
+# Chapter: Embracing Automation in DevOps: A Path to Excellence
 
 ## Introduction
 
