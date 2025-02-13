@@ -1,10 +1,10 @@
 
 
-### Title:Mastering Automation with Dynatrace: Empowering DevOps & SRE excellence with cloud native automation
+### *** Title: Mastering Automation with Dynatrace: Empowering DevOps & SRE excellence with cloud native automation ***
 
 
 
-# Chapter: Embracing Automation in DevOps: A Path to Excellence
+## Chapter: Embracing Automation in DevOps: A Path to Excellence
 
 ## Introduction
 
