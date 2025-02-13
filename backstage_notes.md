@@ -1,4 +1,4 @@
- # Chapter: Enhancing Developer Experience Through Backstage
+ # Enhancing Developer Experience Through Backstage
 
 ## Introduction
 
