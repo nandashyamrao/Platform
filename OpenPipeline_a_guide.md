@@ -1,5 +1,4 @@
-This is a **Detailed discussion on Dynatrace Open Pipeline**, a new ingestion layer for the **Dynatrace platform**. Below is a **thorough breakdown** of the discussion, covering **every aspect** mentioned.
-
+ **Detailed discussion on Dynatrace Open Pipeline**, a new ingestion layer for the **Dynatrace platform**. 
 ---
 
 ## **1. What is Open Pipeline?**
