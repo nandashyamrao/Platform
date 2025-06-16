@@ -1,0 +1,40 @@
+{
+  "log_processing_rules": [
+    {
+      "rule_name": "parse-cloudtrail",
+      "match": {
+        "log.source": "aws.cloudtrail"
+      },
+      "actions": [
+        {
+          "action": "parse",
+          "parser": "cloudtrail"
+        }
+      ]
+    },
+    {
+      "rule_name": "parse-cloudfront",
+      "match": {
+        "log.source": "aws.cloudfront"
+      },
+      "actions": [
+        {
+          "action": "parse",
+          "parser": "cloudfront"
+        }
+      ]
+    },
+    {
+      "rule_name": "parse-generic",
+      "match": {
+        "key_prefix": "custom-logs/"
+      },
+      "actions": [
+        {
+          "action": "parse",
+          "parser": "text"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "log_forwarding_rules": [
+    {
+      "rule_name": "cloudtrail-logs",
+      "match": {
+        "bucket_name": "sf-ems-test-dt-s3-fwd-logs",
+        "key_prefix": "AWSLogs/",
+        "log.source": "aws.cloudtrail"
+      },
+      "actions": [
+        {
+          "action": "forward",
+          "target": "dynatrace"
+        }
+      ]
+    },
+    {
+      "rule_name": "cloudfront-logs",
+      "match": {
+        "bucket_name": "sf-ems-test-dt-s3-fwd-logs",
+        "key_prefix": "CloudFront/",
+        "log.source": "aws.cloudfront"
+      },
+      "actions": [
+        {
+          "action": "forward",
+          "target": "dynatrace"
+        }
+      ]
+    },
+    {
+      "rule_name": "generic-logs",
+      "match": {
+        "bucket_name": "sf-ems-test-dt-s3-fwd-logs",
+        "key_prefix": "custom-logs/"
+      },
+      "actions": [
+        {
+          "action": "forward",
+          "target": "dynatrace"
+        }
+      ]
+    }
+  ]
+}
